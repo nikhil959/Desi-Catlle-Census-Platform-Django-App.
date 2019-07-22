@@ -1,0 +1,138 @@
+<!docdtype html>
+<html>
+{% load static %}
+<head>
+ {% block content %}
+
+<title>Upload</title>
+<style>
+body { 
+         background: url('{% static "final1.png" %}'); 
+        
+         background-size: cover;
+        }
+*{
+margin:0px;
+padding:0px;
+
+}
+
+ .container-fluid{padding-right:15px;padding-left:15px;margin-right:auto;margin-left:auto; overflow: scroll;}
+ #upload  {padding-top:15px;padding-bottom:25px;height:500px;width:500px;color: #fff; background-color: #2B2B1E;}
+
+
+
+ul {
+    list-style-type: none;
+    margin: 0;
+  height: 60px;
+    padding: 0;
+    overflow: hidden;
+    background-color: #2B2B1E;
+  position: fixed;
+  width: 100%;
+}
+
+li {
+    float: right;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 15px 15px;
+    padding-bottom:15px;
+    text-decoration: none;
+}
+
+
+
+.button {
+    background-color: #636865;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+
+input[type=text], input[type=password],input[type=email],input[type=number],input[type=tel],input[type=file] {
+    width: 100%;
+    padding: 12px 20px;
+
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+  padding-right:40px;
+  padding-left:40px;
+}
+
+
+/* Set a style for all buttons */
+button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
+select{
+   width: 100%;
+    padding: 12px 20px;
+
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+  padding-right:40px;
+  padding-left:40px;
+}
+
+
+    
+
+
+</style>
+</head>
+
+<body>
+<nav class="navbar navbar-inverse navbar-fixed-top">
+<ul>
+  <li style="font-weight: 1200;font-family:verdana;float:left; font-size:25px"><a href="{% url 'backg' %}"><img src="{% static "home2.png" %}" width="40" height="40" alt=""></a></li>
+  <li style="font-weight: 1200;float:right; font-size:25px"><a href="{% url 'logout' %}">logout</a></li>
+
+  </ul>
+</nav>
+<br>
+<br>
+<br>
+<br>
+<div id="upload" class="container-fluid">
+     <center>
+  <h1 style="font-size:25px;font-family:serif;"><span style="color:  #40C82A;font-family: sans-serif;">Sub</span><span style="font-family: sans-serif;color:#FFFFFF;">mit</span></h1>
+  <tab5> Please fill all the Details </tab5>
+</center>
+<form method="post" enctype="multipart/form-data">
+  
+      {% csrf_token %} 
+    {{form.as_p}}
+
+<center>
+     
+      <button name="submit" value="submit" type="submit">Submit</button>
+    
+</center>
+</form>
+</div>  
+</body>
+{% endblock %}
+</html>

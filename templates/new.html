@@ -1,0 +1,27 @@
+<html>     
+    <head>         
+    <title>Book Search</title>     
+    </head>     
+    <body>       
+        <p>You searched for: <strong>{{ query }}</strong></p>
+   
+        {% if data %}           
+            
+            <ul>               
+                {% for Post12 in data %}               
+                <li>{{ Post12.breedname }}</li> 
+                <li>{{ Post12.counts }}</li>
+                <li>{{ Post12.ownsername }}</li>
+                <li>{{ Post12.email }}</li>
+                <li>{{ Post12.aadharcard }}</li>
+                <li>{{ Post12.phonenumber }}</li>              
+                <li>{{ Post12.location }}</li>
+                <li>{{ Post12.animaltype }}</li>
+
+                {% endfor %}           
+            </ul>       
+        {% else %}           
+            <p>No books matched your search criteria.</p>       
+        {% endif %}     
+    </body>
+</html>

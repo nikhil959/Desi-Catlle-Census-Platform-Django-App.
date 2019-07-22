@@ -1,0 +1,328 @@
+<!docdtype html>
+<html>
+{% load static %}
+<head>
+
+
+{% block content %}
+<meta charset="utf-8"/>
+
+<style>
+.container-fluid{padding-right:15px;padding-left:15px;margin-right:auto;margin-left:auto; }
+ #About  {padding-top:80px;height:500px;color: #fff; background-color: #2B2B1E;}
+ #Contact {padding-top:80px;height:500px;color: #fff; background-color: #2B2B1E;}
+ #Copyright {padding-top:35px;height:50px;color: #fff; background-color: #000000;}
+body{
+
+background-repeat: no-repeat;
+background-size: cover;
+
+background: url('{% static "final1.JPG" %}') no-repeat center center fixed; 
+        
+
+
+ }
+ 
+ * {
+  margin: 0;
+  padding: 0;
+}
+ul {
+    list-style-type: none;
+    margin: 0;
+  height: 60px;
+    padding: 0;
+    overflow: hidden;
+    background-color: #2B2B1E;
+  position: fixed;
+  width: 100%;
+}
+
+li {
+    float: right;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 15px 15px;
+    text-decoration: none;
+}
+
+/* Change the link color to #111 (black) on hover */
+li a:hover {
+    background-color: #40C82A;
+}
+
+.nat{
+width:100%;
+background:   #FFFFFF;
+height:600px;
+margin-top: 0px;
+opacity:1;
+margin-left: auto;
+margin-right: auto;
+
+background-image: url('{% static "final1.png" %}');
+background-size: cover;
+padding-top:90px;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+/* Full-width input fields */
+input[type=text], input[type=password],input[type=email],input[type=number],input[type=tel],input[type=file] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+  padding-right:40px;
+  padding-left:40px;
+}
+
+
+/* Set a style for all buttons */
+button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
+
+button:hover {
+    opacity: 0.8;
+}
+
+/* Extra styles for the cancel button */
+.cancelbtn {
+    width: auto;
+    padding: 10px 18px;
+    background-color: #f44336;
+}
+.signupbtn {
+    width: auto;
+    padding: 10px 18px;
+    background-color: #f44336;
+   float: right;
+}
+
+/* Center the image and position the close button */
+.imgcontainer {
+    text-align: center;
+    margin: 24px 0 12px 0;
+    position: relative;
+}
+
+img.avatar {
+    width: 55%;
+  height: 18%;
+    border-radius: 50%;
+}
+
+
+
+span.psw {
+    float: right;
+    padding-top: 16px;
+}
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 500;
+    top: 0;
+    width:400px; /* Full width */
+    height: 150%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(1,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.2); /* Black w/ opacity */
+    padding-top: 60px;
+  padding-left:40px;
+  padding-right:40px;
+  
+}
+
+/* Modal Content/Box */
+.modal-content {
+    background-color: #fefefe;
+    margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+    border: 1px solid #888;
+    width: 80%; 
+    padding-left:20px;
+  padding-right:20px;
+  padding-bottom:15px;/* Could be more or less, depending on screen size */
+}
+
+
+
+/* The Close Button (x) */
+.close {
+    position: absolute;
+    right: 25px;
+    top: 0;
+    color: #000;
+    font-size: 35px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: red;
+    cursor: pointer;
+}
+
+/* Add Zoom Animation */
+.animate {
+    -webkit-animation: animatezoom 0.6s;
+    animation: animatezoom 0.6s
+}
+
+@-webkit-keyframes animatezoom {
+    from {-webkit-transform: scale(0)} 
+    to {-webkit-transform: scale(1)}
+}
+    
+@keyframes animatezoom {
+    from {transform: scale(0)} 
+    to {transform: scale(1)}
+}
+
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 300px) {
+    span.psw {
+       display: block;
+       float: none;
+    }
+    .cancelbtn {
+       width: 100%;
+    }
+}
+
+
+
+
+</style>
+</head>
+
+<body>
+
+
+
+
+<nav class="navbar navbar-inverse navbar-fixed-top">
+<ul>
+  <li style="font-weight: 1200;font-family:verdana;float:left; font-size:25px"><a href="{% url 'backg' %}">Desi Cattle Census Platform</a></li>
+  
+  
+  <li style="font-size:25px;font-family:serif;"><a href="#About">About</a></li>
+  <li  style="font-size:25px;font-family:serif;"><a class="active"  onclick="document.getElementById('id01').style.display='block'">Sign in</a></li>
+   <li style="font-size:25px;font-family:serif;"><a href="{% url 'archive' %}"><label>Search</label></a></li>
+</ul>
+</nav>
+
+<div class="nat">
+<center>
+    <p  style="font-size:90px; font-family: Fantasy;">Desi Cattle Cen<span style="color:  #40C82A">sus Platform</span></p>
+  <br>
+  </center>
+  <p style="font-size:25px;text-align: justify;text-align-last: center;font-family:verdana"><u> Go Desi,<span style="color:  #40C82A">Go Natural</span></u></p>
+  </div>
+
+
+
+  <div id="About" class="container-fluid">
+  <center>
+<h1><span style="color:  #40C82A;font-family: sans-serif;">About</span> <span style="font-family: sans-serif;">Us</span></h1>
+<br>
+<br>
+</center>
+
+  <center><p>
+The living sages of India teach us a wisdom that cannot be taught by <br>our universities and the priceless culture of our country disseminate from them.<br>
+To create awareness of overcoming the disadvantages of farming western breeds<br> ,we are creating a Census platform ,where we can have a count on desi Breeds<br> Across India and helping people to reach respective owners<br> and encourage them to start breeding Desi animals,instead of western Breed.
+<br></p>
+</center>
+</div>
+
+
+
+
+
+</div>
+
+<div id="Copyright" class="container-fluid">
+<center>
+  <p style=" font-weight: 999;">ALL RIGHTS RESERVED COPYRIGHT &copy 2018</p>
+  
+  </center>
+  </div>
+
+
+<div id="id01" class="modal">
+
+  <form class="modal-content animate" role="form" method="post" action="">
+
+    <div class="imgcontainer">
+      <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+      <img src="{% static "profile.png" %}" alt="Avatar" class="avatar">
+    </div>
+
+    
+<div class="container" >
+ 
+ {% csrf_token %}
+     {{aform}}
+    
+<button name='submit' value="Sign_In" type="submit">Log in</button>
+
+
+<button onclick="window.location.href='{% url 'signup' %}'" type="button" onclick="document.getElementById('id01').style.display='none'" >Sign up</button>
+
+
+
+  
+
+</div>
+  </form>
+
+ 
+
+
+
+<script>
+
+var modal = document.getElementById('id01');
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+
+var modal = document.getElementById('id02');
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+
+</script>
+</body>
+{% endblock %}
+</html>

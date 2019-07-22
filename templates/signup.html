@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+{% load static %}
+
+<html>
+<head>
+ {% block content %}
+
+</head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+
+
+body{
+
+background-repeat: no-repeat;
+background-size: cover;
+
+background: url('{% static "final1.png" %}') ;
+
+ }
+
+        .container-fluid{padding-right:15px;padding-left:15px;margin-right:auto;margin-left:auto; }
+ #About  {padding-top:15px;padding-bottom:25px;height:500px;width:500px;color: #fff; background-color: #2B2B1E;}
+
+
+         * {
+  margin: 0;
+  padding: 0;
+}
+ul {
+    list-style-type: none;
+    margin: 0;
+  height: 60px;
+    padding: 0;
+    overflow: hidden;
+    background-color: #2B2B1E;
+  position: fixed;
+  width: 100%;
+}
+
+li {
+    float: right;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 15px 15px;
+    padding-bottom:15px;
+    text-decoration: none;
+}
+
+/* Change the link color to #111 (black) on hover */
+
+
+input[type=text], input[type=password],input[type=email],input[type=number],input[type=tel],input[type=file] {
+    width: 100%;
+    padding: 12px 20px;
+
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+  padding-right:40px;
+  padding-left:40px;
+}
+
+
+/* Set a style for all buttons */
+button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
+
+button:hover {
+    opacity: 0.8;
+}
+
+
+
+
+
+
+</style>
+
+  <body>
+<nav class="navbar navbar-inverse navbar-fixed-top">
+<ul>
+  <li style="font-weight: 1200;font-family:verdana;float:left; font-size:25px"><a href="{% url 'backg' %}"><img src="{% static "home2.png" %}" width="40" height="40" alt=""></a></li>
+  
+  
+  
+</ul>
+</nav>
+
+<div>
+  <br>
+  <br>
+    <br>
+      <br>
+</div>
+<div id="About" class="container-fluid">
+  <center>
+
+<br>
+<br>
+</center>
+<div class="about">
+   <form action="" method="post">
+    <center>
+  <h1 style="font-size:25px;font-family:serif;"><span style="color:  #40C82A;font-family: sans-serif;">Sign</span><span style="font-family: sans-serif;color:#FFFFFF;">up</span></h1>
+</center>
+     {% csrf_token %}
+      
+        <br>
+        <tab5> Please fill in this form to create an account.</tab5><br><br>
+       
+          
+
+    {% csrf_token %}
+    {% for field in form %}
+      <p>
+        {{ field.label_tag }}<br>
+        {{ field }}
+        {% if field.help_text %}
+         
+        {% endif %}
+        {% for error in field.errors %}
+          <p style="color: red">{{ error }}</p>
+        {% endfor %}
+      </p>
+    {% endfor %}
+         <center>
+            
+                <button name='submit' value="Sign_up" type="submit">Sign up</button>
+</center>
+ 
+</div>
+	 </body>
+ 
+  {% endblock %}
+  
+  </html>
